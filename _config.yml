@@ -41,11 +41,11 @@ baseurl:
 #### Language
 language: zh-CN    ## blog site languages: en, zh-CN, zh-TW
 
-#### Menu
+#### 菜单
 menu:
-  Home: /
-  Archives: /archives
-  About: /about
+  主页: /
+  归档: /archives
+  关于: /about
 ## you can create `tags` and `categories` folders (I had created them already).
 ## And create a `index.md` file in each of them.
 ## set `front-matter`as
@@ -53,7 +53,7 @@ menu:
 ## title: tags (or categories)
 ## ---
 
-#### Widgets
+#### 控件
 widgets: 
 - category
 - tag
@@ -68,28 +68,28 @@ widgets:
 #### RSS 
 rss: /atom.xml ## RSS address.
 
-#### Image
+#### 图片相关
 imglogo:
-  enable: true             ## display image logo true/false.
+  enable: true             ## 是否显示网站 logo
   src: img/logo.png        ## `.svg` and `.png` are recommended,please put image into the theme folder `/jacman/source/img`.
 favicon: img/favicon.ico   ## size:32px*32px,`.ico` is recommended,please put image into the theme folder `/jacman/source/img`.     
 apple_icon: img/jacman.jpg ## size:114px*114px,please put image into the theme folder `/jacman/source/img`.
 author_img: img/author.jpg ## size:220px*220px.display author avatar picture.if don't want to display,please don't set this.
 banner_img: #img/banner.jpg ## size:1920px*200px+. Banner Picture
 
-#### index post is expanding or not 
+#### 首页相关
 index:
-  expand: true           ## default is unexpanding,so you can only see the short description of each post.
+  expand: true           ## 首页文章是否展开。默认为展开式，显示 Read More。
   excerpt_link: Read More  
 
-close_aside: false  #close sidebar in post page if true
+close_aside: false  #是否在文章页面自动关闭侧边栏
 mathjax: true      #enable mathjax if true
 share_button: true #enable share buttons if true
 
-#### Author information
+#### 作者信息
 author:
-  name: yitao      ## e.g. wuchong Author name
-  intro_line1:  "Hello ,I'm Larry Page in Google."    ## your introduction on the bottom of the page
+  name: 淡忘      ## 作者名
+  intro_line1:  "Hello ,I'm danwang."    ## 网站底部的个人介绍
   intro_line2:  "This is my blog,believe it or not."  ## the 2nd line
   weibo:      ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
   weibo_verifier:  ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
@@ -105,29 +105,29 @@ author:
   stackoverflow:  ## e.g. 3222790 for http://stackoverflow.com/users/3222790/jark
 ## if you set them, the corresponding  share button will show on the footer
 
-#### Toc
+#### 目录
 toc:
-  article: true   ## show contents in article.
-  aside: true     ## show contents in aside.
+  article: true   ## 是否在文章中显示目录
+  aside: true     ## 是否在侧边栏显示目录
 ## you can set both of the value to true of neither of them.
 ## if you don't want display contents in a specified post,you can modify `front-matter` and add `toc: false`.
 
-#### Links
+#### 友情链接
 links:
   码农圈: https://coderq.com
   Jark's Blog: http://wuchong.me
 
-#### Comment
+#### 评论
 duoshuo_shortname:    ## e.g. wuchong   your duoshuo short name.
 disqus_shortname:     ## e.g. wuchong   your disqus short name.
 
-#### Share button
+#### 分享按钮
 jiathis:
-  enable: false ## if you use jiathis as your share tool,the built-in share tool won't be display.
+  enable: false ## 默认使用主题内建分享
   id:    ## e.g. 1889330 your jiathis ID. 
   tsina: ## e.g. 2176287895 Your weibo id,It will be used in share button.
 
-#### Analytics
+#### 网站统计
 google_analytics:
   enable: false
   id:        ## e.g. UA-46321946-2 your google analytics ID.
