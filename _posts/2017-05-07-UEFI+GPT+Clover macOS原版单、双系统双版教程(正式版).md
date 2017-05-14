@@ -21,6 +21,24 @@ tag: 教程
 
 写入占用大概5-6G，准备8G以上U盘即可。
 
+![](/assets/posts/tutorial/A.png)
+
+![](/assets/posts/tutorial/B.png)
+
+![](/assets/posts/tutorial/C.png)
+
+![](/assets/posts/tutorial/D.png)
+
+![](/assets/posts/tutorial/E.png)
+
+![](/assets/posts/tutorial/F.png)
+
+![](/assets/posts/tutorial/G.png)
+
+![](/assets/posts/tutorial/H.png)
+
+![](/assets/posts/tutorial/I.png)
+
 ## **OS X下制作macOS原版安装U盘**
 
 ### **准备工作：**
