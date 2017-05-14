@@ -41,7 +41,7 @@ tag: 教程
 
 ### **准备工作：**
 
-(1).准备一个 8GB 或以上容量的 U 盘，确保里面的数据已经妥善备份好（该过程会抹掉 U 盘全部数据）
+(1).准备一个 8GB 或以上容量的U盘，确保里面的数据已经妥善备份好（该过程会抹掉U盘全部数据）
 
 (2).首先，在 MAS 下载 macOS 10.12 原版安装包。
 
@@ -99,7 +99,7 @@ sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallme
 最后打开Clover Configurator，点击Mount EFI，选择你的U盘，点击Mount Partition ，然后点击Open Partition ，弹出EFI分区，在里面放入EFI文件夹，至此，U盘安装盘制作而成。使用方法同上！
 ![](/assets/posts/tutorial/Snip1.png)
 
-## Windows+macOS(同一硬盘内同时存在NTFS/HFS+分区)
+## **Windows+macOS(同一硬盘内同时存在NTFS/HFS+分区)**
 
 > 适用于以下情况： 
 
@@ -175,13 +175,15 @@ Windows安装的方法很多（这里建议安装Windows10），这里就不细�
 ![](/assets/posts/tutorial/Snip13.png)
 
 
-**注：有可能会出现重复进入第一阶段，或者进入第二阶段出现以下错误**
+> **注：有可能会出现重复进入第一阶段，或者进入第二阶段出现以下错误**
 ![](/assets/posts/tutorial/Snip14.png)
 
-**出现这种情况的话，进入Windows，打开Tramsmac，下载<a href="https://pan.baidu.com/s/1hsBUzm0" target="_blank">IAProductInfo.zip</a>，解压缩，里面为一个隐藏文件，使用方法为**
+> **出现这种情况的话，进入Windows，打开Tramsmac，下载<a href="https://pan.baidu.com/s/1hsBUzm0" target="_blank">IAProductInfo.zip</a>，解压缩，里面为一个隐藏文件，使用方法为**
 ![](/assets/posts/tutorial/IAProductInfo.png)
+**放入之后，重新开始安装macOS就行**
 
 
-## macOS单系统安装(macOS所在硬盘没有NTFS分区)
+## **macOS单系统安装(macOS所在硬盘没有NTFS分区)**
+
 
 
