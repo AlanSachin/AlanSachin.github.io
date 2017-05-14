@@ -62,7 +62,9 @@ tag: 教程
 
 (3).复制下面的命令，并粘贴到「**终端**」里，按回车运行：
 
-    sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/ABCD --applicationpath /Applications/Install\ macOS\ Sierra.app --nointeraction
+```
+sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/ABCD --applicationpath /Applications/Install\ macOS\ Sierra.app --nointeraction
+```
 
 > 命令说明：
 
