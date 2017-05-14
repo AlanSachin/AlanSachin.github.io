@@ -11,6 +11,8 @@ tag: 教程
 
 > MBR分区表等下要转GPT，主板的launch CSM/Legacy要关掉，请按照实际情况修改。（不知道什么意思的请百度）
 
+<!--more-->
+
 ### 一、Windows下制作macOS原版安装U盘
 
 用到的正式版自修改镜像：<a href="http://pan.baidu.com/s/1kV0WHTl" target="_blank">macOS Sierra 10.12.4(16E195)原版镜像</a>
