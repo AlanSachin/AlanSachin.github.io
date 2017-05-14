@@ -1,154 +1,31 @@
 ---
-title: 'Hello World 的编译链接概述'
+title: 'Clover 四叶草百科 | 前言'
 layout: post
 tags:
-  - cpp
-  - compiler
+  - Clover
 category: Program
 ---
 
-《程序员的自我修养》读书笔记，简单概述一个 Hello World 程序的编译链接过程。
+这里将介绍下Clover的前言。启动类型以及名字的由来
 
-<!--more-->
+### 前言
 
-有如下的`hello.c`源文件：
+那么什么是Clover（三叶草）呢？显然它不是指的草地里用来喂牛的草啦。Clover是一个软件，是一个新型的启动器，它能够让普通的PC上用上Mac OS X系统。
 
-```c++
-#include <stdio.h>
+苹果公司（Apple）限制Mac OS X系统只能在Apple设备上使用，并且苹果不保证Mac OS X在其它设备上能够正常工作。所以，用户需要承担一定的风险。当然，为了避免其它的法律纠纷，你不应该用作商业用途。装上了Mac OS X的非苹果电脑，就叫做黑苹果(Hackintosh)。
 
-int main()
-{
-    printf("Hello World\n");
-    return 0;
-}
-```
+为了开始黑苹果，你需要一个特殊的启动器。现在有很多启动器，它们可以分成两类：仿冒EFI和真实EFI。
 
-可以用 GCC 来编译运行：
+### 启动器类型
 
-```sh
-$gcc hello.c
-$./a.out
-Hello World
-```
+仿冒EFI：它是很多年前David Ellion发明的。工作流程如下：它假设EFI已经完成了相应的工作，并在内存里以一种简单的形式保留活动痕迹（boot-arg和tables tree）和EFI运行时程序，然后启动内核_mach_kernel_。举例来说，Chameleon(变色龙)就是这种启动方式，它会产生一些负面影响，比如使启动磁盘选项面板不工作。正是这种没有运行时服务的工作方式让苹果有机会从中作难。2013年1月的情况是，因为缺少SetVariable()函数，iMessage停止运行。
 
-上述步骤可以分解为 4 个步骤，分别是**预处理（Prepressing）**、**编译（Compilation）**、**汇编（Assembly）**和**链接（Linking）**。
+真实EFI：对于BIOS主板而言，理论上需要将EFI刷入主板来代替BIOS，但是实际上只需要一个可以加载的EFI即可。EFI启动方式由Intel发明，现在它是TianoCore.org上一个活跃的开源项目，启动器的名字叫_DUET_。那么问题来了，它能够加载EFI但是它并不是用来启动Mac OS X的。所以我们还需要修改DUET，使之能够启动Mac OS X。较新的主板已经包含了EFI，但它并不适合运行黑苹果。
 
-## 被隐藏了的过程
+### 名字由来
 
-### 预处理
+启动器的名字_Clover_由一位创建者kabyl命名。他发现了四叶草和Mac键盘上Commmand键的相似之处，由此起了Clover这个名字。
 
-```sh
-$gcc -E hello.c -o hello.i
-```
+![cmd-Clover-logo](/assets/posts/Clover-logo/logo.jpg)*维基百科：四叶草是三叶草的稀有变种。根据西方传统，发现者四叶草意味的是好运，尤其是偶然发现的，更是祥瑞之兆。另外，第一片叶子代表信仰，第二片叶子代表希望，第三片叶子代表爱情，第四片叶子代表运气。*
 
-或者：
-
-```sh
-$cpp hello.c > hello.i
-```
-
-预编译过程主要处理那些源代码文件听以“#”开始的预编译指令。
-
-经过预编译后的 .i 文件不包含任何宏定义，因为所有的宏已经被展开，并且包含的文件也已经被插入到 .i 文件中。
-
-### 编译
-
-```sh
-$gcc -S hello.i -o hello.S
-```
-
-或者使用`cc1`：
-
-```sh
-$/usr/lib/gcc/i486-linux-gnu/4.1/cc1 hello.c
-```
-
-编译过程就是把预处理完的文件进行一系列**词法分析**、**语法分析**、**语义分析**及**优化**后产生的相应的汇编代码文件。
-
-实际上 gcc 这个命令只是这些后台程序的包装，它会根据不同的参数要求去调用预编译编译程序 cc1、汇编器 as、链接器 ld。
-
-### 汇编
-
-```sh
-$as hello.s -o hello.c
-```
-或者：
-
-```sh
-$gcc -c hello.s -o hello.o
-```
-
-汇编器是将汇编代码转变成机器可以执行的指令，每一个汇编语句几乎都对应一条机器指令。
-
-### 链接
-
-```sh
-$ld -static crt1.o crti.o crtbeginT.o hello.o -start-group -lgcc -lgcc_eh -lc -end-group crtend. crtn.o
-```
-
-## 编译器做了什么
-
-编译过程一般可以分为6步：扫描、语法分析、语义分析、源代码优化、代码生成和目标代码优化。
-
-以如下代码为例：
-
-```c++
-array[index] = (index + 4) * (2 + 6)
-```
-
-### 词法分析
-
-源代码被输入到**扫描器（Scanner）**，进行词法分析，生成一系列的**记号（Token）**。
-
-|记号|类型|
-|---|---|
-|array|标识符|
-|[|左方括号|
-|index|标识符|
-|]|右方括号|
-|=|赋值|
-|(|左圆括号|
-|index|标识符|
-|+|加号|
-|4|数字|
-|)|右圆括号|
-|*|乘号|
-|(|左圆括号|
-|2|数字|
-|+|加号|
-|6|数字|
-|)|右圆括号|
-
-在识别记号的同时，扫描器也将标识符存放到符号表，将数字、字符串常量存放到文字表等。
-
-有一个叫 lex 的程序可以实现词法分析，它会按照用户之前描述好的词法规则将输入的字符串分割成一个个记号。
-
-### 语法分析
-
-**语法分析器（Grammar Parser）**将上述产生的记号进行语法分析，从而生成**语法树（Syntax Tree）**。
-
-有一个现在的工具叫 yacc（Yet Another Compiler Compiler）可以构建出语法树。
-
-
-### 语义分析
-
-**语义分析器（Semantic Analyzer）**完成了对表达式的语法层面的分析，即**静态语义（Static Semantic）**，包括声明和类型匹配，类型的转换。
-
-语义分析阶段后，语法树的表达式都被标识了类型，如有隐式转换，则插入相应的转换节点。
-
-### 中间语言的生成
-
-**源码优化器（Source Code Optimizer）**将整个语法树转换成**中间代码（Intermediate Code）**，常见的有**三地址码（Three-address Code）**和**P-代码（P-Code）**，再进行源码级别的优化。
-
-中间代码使用编译器可以被分为前端和后端。编译器前端负责产生机器无关的中间代码，编译器后端将中间代码转换成目标机器代码。
-
-### 目标代码生成与优化
-
-**代码生成（Code Generator）**将中间代码转换成目标机器代码，**目标代码化化器（Target Code Optimizer）**则对目标代码进行优化。
-
-## 静态链接
-
-**链接（Linking）**的主要内容就是把各个模块之间相互引用的部分都处理好。
-
-链接过程主要包括了**地址和空间分配（Address and Storage Allocation）**、**符号决议（Symbol Resolution）**和**重定位（Relocation）**这些步骤。
-
+原文链接:https://clover-wiki.zetam.org/zh-CN/Preface
