@@ -13,13 +13,11 @@ tag: 教程
 
 <!--more-->
 
-## Windows下制作macOS原版安装U盘 
+## **Windows下制作macOS原版安装U盘** 
 
 用到的正式版自修改镜像：<a href="http://pan.baidu.com/s/1kV0WHTl" target="_blank">macOS Sierra 10.12.4(16E195)原版镜像</a>
 
-下下来后用Transmac写入就行，Tramsmac在镜像链接里面
-
-写入占用大概5-6G，准备8G以上U盘即可。
+镜像下载完成以后，先用hash软件检验下镜像的MD5值，如果MD5值和镜像制作者所提供的不一样，那么请重新下载，MD5值确认无误以后，用Transmac写入就行，按照下面的步骤来，Transmac和hash软件都在上面的镜像链接里面。
 
 ![](/assets/posts/tutorial/A.png)
 
