@@ -13,7 +13,7 @@ tag: 教程
 
 <!--more-->
 
-## Windows下制作macOS原版安装U盘
+## Windows下制作macOS原版安装U盘 
 
 用到的正式版自修改镜像：<a href="http://pan.baidu.com/s/1kV0WHTl" target="_blank">macOS Sierra 10.12.4(16E195)原版镜像</a>
 
@@ -21,11 +21,9 @@ tag: 教程
 
 写入占用大概5-6G，准备8G以上U盘即可。
 
+## **OS X下制作macOS原版安装U盘**
 
-
-## OS X下制作macOS原版安装U盘
-
-### **1.准备工作：**
+### **准备工作：**
 
 (1).准备一个 8GB 或以上容量的 U 盘，确保里面的数据已经妥善备份好（该过程会抹掉 U 盘全部数据）
 
@@ -36,7 +34,7 @@ tag: 教程
 确定应用程序名字为「**Install macOS Sierra.app**」
 ![](/assets/posts/tutorial/Install macOS Sierra.app.png)
 
-### **2.格式化优盘**
+### **格式化优盘**
 
 (1).插入你的 U 盘，然后在「**应用程序**」->「**实用工具**」里面找到并打开「**磁盘工具**」
 
@@ -54,7 +52,7 @@ tag: 教程
 
 ![](/assets/posts/tutorial/Disk Utility.png)
 
-### **3.输入终端命令开始制作启动盘**
+### **输入终端命令开始制作启动盘**
 
 (1).请再次确保安装文件是保存在「**应用程序**」的目录中
 
@@ -62,7 +60,7 @@ tag: 教程
 
 (3).复制下面的命令，并粘贴到「**终端**」里，按回车运行：
 
-```
+```c++
 sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/ABCD --applicationpath /Applications/Install\ macOS\ Sierra.app --nointeraction
 ```
 
@@ -80,7 +78,7 @@ sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallme
 
 当你看到最后有 「**Copy complete**」和「**Done**」 字样出现就是表示启动盘已经制作完成了！
 
-### **4.在EFI分区放入Clover**
+### **在EFI分区放入Clover**
 
 最后打开Clover Configurator，点击Mount EFI，选择你的U盘，点击Mount Partition ，然后点击Open Partition ，弹出EFI分区，在里面放入EFI文件夹，至此，U盘安装盘制作而成。使用方法同上！
 ![](/assets/posts/tutorial/Snip1.png)
@@ -94,7 +92,7 @@ sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallme
 > II. OSX安装到另外的硬盘，但Windows要在macOS所在硬盘划分NTFS分区当做仓储。（此情况下，建议每个硬盘都建一个EFI和MSR分区）
 
 
-### **1.硬盘分区情况**
+### **硬盘分区情况**
 
 进入PE，打开DiskGenius，这里推荐使用的PE是<a href="http://www.wepe.com.cn/download.html" target="_blank">微PE</a>
 
@@ -117,11 +115,11 @@ sudo /Applications/Install\ macOS\ Sierra.app/Contents/Resources/createinstallme
 
 ***注：可以不需要按照这样来分，这里给出的只是建议，具体随便你们***
 
-### **2.Windows的安装**
+### **Windows的安装**
 
 Windows安装的方法很多（这里建议安装Windows10），这里就不细说了，详情百度：<a href="https://www.baidu.com/s?ie=UTF-8&wd=UEFI+GPT%E5%AE%89%E8%A3%85Windows10" target="_blank">UEFI+GPT安装Windows10</a>
 
-### **3.macOS的安装**
+### **macOS的安装**
 
 (1).启动电脑，按下启动快捷热键，选择**UEFI 你的U盘启动**，进入Clover界面
 ![](/assets/posts/tutorial/Snip2.png)
