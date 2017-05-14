@@ -6,7 +6,7 @@ highlighter: pygments
 
 #### Permalink
 # For more see: http://jekyllrb.com/docs/permalinks/
-permalink: /:categories/:year/:month/:day/:title 
+permalink: /:year/:month/:day/:title 
 
 #### Markdown Processors
 markdown: redcarpet
@@ -28,24 +28,27 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+
+#### Separator
+excerpt_separator: <!--more-->
       
 #### Pagination
-paginate: 20
+paginate: 10
 
 #### Site
-title : Jekyll Jacman
-tagline: A fresh looking and responsive theme for Jekyll
+title : Yitao's Blog
+tagline: A technology blog for myself.
 assets: /assets
-baseurl: 
+baseurl:
 
 #### Language
 language: zh-CN    ## blog site languages: en, zh-CN, zh-TW
 
-#### 菜单
+#### Menu
 menu:
-  主页: /
-  归档: /archives
-  关于: /about
+  Home: /
+  Archives: /archives
+  About: /about
 ## you can create `tags` and `categories` folders (I had created them already).
 ## And create a `index.md` file in each of them.
 ## set `front-matter`as
@@ -53,14 +56,13 @@ menu:
 ## title: tags (or categories)
 ## ---
 
-#### 控件
+#### Widgets
 widgets: 
 - category
 - tag
-- tagcloud
 - links
+- weibo
 - douban
-- github-card
 - rss
 ## provide seven widgets:github-card,category,tag,rss,archive,tagcloud,links,weibo,douban
 
@@ -68,70 +70,72 @@ widgets:
 #### RSS 
 rss: /atom.xml ## RSS address.
 
-#### 图片相关
+#### Image
 imglogo:
-  enable: true             ## 是否显示网站 logo
+  enable: true             ## display image logo true/false.
   src: img/logo.png        ## `.svg` and `.png` are recommended,please put image into the theme folder `/jacman/source/img`.
 favicon: img/favicon.ico   ## size:32px*32px,`.ico` is recommended,please put image into the theme folder `/jacman/source/img`.     
 apple_icon: img/jacman.jpg ## size:114px*114px,please put image into the theme folder `/jacman/source/img`.
 author_img: img/author.jpg ## size:220px*220px.display author avatar picture.if don't want to display,please don't set this.
 banner_img: #img/banner.jpg ## size:1920px*200px+. Banner Picture
 
-#### 首页相关
+#### index post is expanding or not 
 index:
-  expand: true           ## 首页文章是否展开。默认为展开式，显示 Read More。
+  expand: true           ## default is unexpanding,so you can only see the short description of each post.
   excerpt_link: Read More  
 
-close_aside: false  #是否在文章页面自动关闭侧边栏
-mathjax: true      #enable mathjax if true
+close_aside: true  #close sidebar in post page if true
+mathjax: false     #enable mathjax if true
 share_button: true #enable share buttons if true
 
-#### 作者信息
+#### Author information
 author:
-  name: 淡忘      ## 作者名
-  intro_line1:  "Hello ,I'm danwang."    ## 网站底部的个人介绍
-  intro_line2:  "This is my blog,believe it or not."  ## the 2nd line
-  weibo:      ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
-  weibo_verifier:  ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
-  tsina:      ## e.g. 2176287895  Your weibo ID,It will be used in share button.
-  douban:     ## e.g. wuchong1014 or your id for https://www.douban.com/people/wuchong1014
-  zhihu:      ## e.g. jark  for http://www.zhihu.com/people/jark
-  email:      ## e.g. imjark@gmail.com
+  name: yitao      ## e.g. wuchong Author name
+  intro_line1:  "Hello, I'm Yitao in SYSU."    ## your introduction on the bottom of the page
+  intro_line2:  "Too simple, sometimes naive."  ## the 2nd line
+  weibo: 1836017133      ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
+  weibo_verifier: 8266a57e  ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
+  tsina: 1836017133      ## e.g. 2176287895  Your weibo ID,It will be used in share button.
+  douban: 62234732     ## e.g. wuchong1014 or your id for https://www.douban.com/people/wuchong1014
+  zhihu: yaoyit      ## e.g. jark  for http://www.zhihu.com/people/jark
+  email: simpleyyt@gmail.com      ## e.g. imjark@gmail.com
   twitter:    ## e.g. jarkwu for https://twitter.com/jarkwu
-  github:     ## e.g. wuchong for https://github.com/wuchong
+  github: simpleyyt     ## e.g. wuchong for https://github.com/wuchong
   facebook:   ## e.g. imjark for https://facebook.com/imjark
   linkedin:   ## e.g. wuchong1014 for https://www.linkedin.com/in/wuchong1014
-  google_plus:    ## e.g. "111190881341800841449" for https://plus.google.com/u/0/111190881341800841449, the "" is needed!
+  google_plus: "103860633659538888207"    ## e.g. "111190881341800841449" for https://plus.google.com/u/0/111190881341800841449, the "" is needed!
   stackoverflow:  ## e.g. 3222790 for http://stackoverflow.com/users/3222790/jark
 ## if you set them, the corresponding  share button will show on the footer
 
-#### 目录
+#### Toc
 toc:
-  article: true   ## 是否在文章中显示目录
-  aside: true     ## 是否在侧边栏显示目录
+  article: true   ## show contents in article.
+  aside: true     ## show contents in aside.
 ## you can set both of the value to true of neither of them.
 ## if you don't want display contents in a specified post,you can modify `front-matter` and add `toc: false`.
 
-#### 友情链接
+#### Links
 links:
-  码农圈: https://coderq.com
+  CoolShell: http://coolshell.cn
   Jark's Blog: http://wuchong.me
 
-#### 评论
-duoshuo_shortname:    ## e.g. wuchong   your duoshuo short name.
+#excerpt_separator: <!--more-->
+
+#### Comment
+duoshuo_shortname: simpleyyt   ## e.g. wuchong   your duoshuo short name.
 disqus_shortname:     ## e.g. wuchong   your disqus short name.
 
-#### 分享按钮
+#### Share button
 jiathis:
-  enable: false ## 默认使用主题内建分享
+  enable: false ## if you use jiathis as your share tool,the built-in share tool won't be display.
   id:    ## e.g. 1889330 your jiathis ID. 
   tsina: ## e.g. 2176287895 Your weibo id,It will be used in share button.
 
-#### 网站统计
+#### Analytics
 google_analytics:
-  enable: false
-  id:        ## e.g. UA-46321946-2 your google analytics ID.
-  site:      ## e.g. wuchong.me your google analytics site or set the value as auto.
+  enable: true
+  id: UA-67994495-1        ## e.g. UA-46321946-2 your google analytics ID.
+  site: auto      ## e.g. wuchong.me your google analytics site or set the value as auto.
 ## You MUST upgrade to Universal Analytics first!
 ## https://developers.google.com/analytics/devguides/collection/upgrade/?hl=zh_CN
 baidu_tongji:
@@ -147,8 +151,8 @@ totop: true           ## if you want to scroll to top in every post set the valu
 
 #### Custom Search
 google_cse: 
-  enable: false
-  cx: 018294693190868310296:abnhpuysycw  ## e.g. 018294693190868310296:abnhpuysycw your Custom Search ID.
+  enable: true
+  cx: 004255214185073801838:_icnlls8kds  ## e.g. 018294693190868310296:abnhpuysycw your Custom Search ID.
 ## https://www.google.com/cse/ 
 ## To enable the custom search You must create a "search" folder in '/source' and a "index.md" file
 ## set the 'front-matter' as
