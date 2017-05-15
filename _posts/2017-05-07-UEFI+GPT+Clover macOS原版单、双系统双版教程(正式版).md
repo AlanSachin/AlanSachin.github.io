@@ -3,7 +3,8 @@ layout: post
 title: "UEFI+GPT+Clover macOS原版单、双系统双版教程(正式版)"
 date: 2017-05-07 20:05:22 
 description: "安装系统教程"
-tag: 教程
+tag: 安装系统教程
+category: tutorial
 ---
 
 ## **阅前须知**
